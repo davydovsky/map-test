@@ -9,7 +9,7 @@ var app = app || {};
     'use strict';
 
     // Коллекция точек
-    app.PointCollection = Backbone.Model.extend({
+    app.PointCollection = Backbone.Collection.extend({
         // Модель - точка
         model: app.Point,
         
@@ -18,8 +18,8 @@ var app = app || {};
         
         /**
          * Создание новой точки и добавление ее в коллекцию
-         * @param {Double} lat
-         * @param {Double} lng
+         * @param {Double} Широта
+         * @param {Double} Долгота
          */
         createPoint: function (lat, lng) {
             this.create({
@@ -31,10 +31,10 @@ var app = app || {};
         
         /**
          * Генерация имени для новой точки
-         * @returns {String} 
+         * @returns {String} Имя точки
          */
         generatePointTitle: function () {
             return 'Point #' + (this.length + 1);
         }
     });
-});
+})();
