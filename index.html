@@ -8,14 +8,14 @@
         
         <!-- Стили -->
         <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="styles/style.css"/>
     </head>
     <body>
         <div id="main-container">
             <div id="handle"></div>
             <div id="list-container">
-                <ul id="point-list"></ul>
+                <div id="point-list" class="list-group"></div>
             </div>
             <div id="map-container">
                 <div id="map"></div>
@@ -29,5 +29,20 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+        
+        <!-- Шаблоны -->
+        <script id="list-item-template" type="text/template">
+            <span><%= title %></span>
+	</script>
+        
+        <!-- Компоненты приложения -->
+        <script src="js/Models/Point.js"></script>
+        <script src="js/Models/State.js"></script>
+        <script src="js/Collections/PointCollection.js"></script>
+        <script src="js/Views/ListItemView.js"></script>
+        <script src="js/Views/PointListView.js"></script>
+        <script src="js/Views/MapView.js"></script>
+        <script src="js/Views/MainView.js"></script>
+        <script src="js/App.js"></script>
     </body>
 </html>
